@@ -15,9 +15,10 @@ body {
 
 #container {
 	width: 900px;
-	margin: 50px auto;
+	margin: 50px auto 20px auto;
 	height: 317px; 
 	border: 1px solid LightGray;
+	overflow: hidden;
 }
 
 header {
@@ -33,16 +34,12 @@ header {
 
 #main-display {
 	overflow: hidden;
-	width: 900px;
+	width: 5000px;
 	height: 200px;
 	background-color: white;
 	padding: 10px 0;
 	border: 1px solid LightGray; 
 	margin-left: -1px;
-}
-
-.main-image {
-	float: left !important;	
 }
 
 #display-container {
@@ -71,10 +68,20 @@ header {
 }
 .thumbnail-image .sep-1st {
 	height: 45px;
-	margin-right: 0;
 	float: left;
 }
 
 .active-thumbnail {
 	background:url(../img/active_bg.png) no-repeat;
+	margin-left: -4px;
+}
+
+#auto-play {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#auto-play img {
+	width: 64px;
 }
