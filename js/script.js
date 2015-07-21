@@ -30,11 +30,7 @@ $(document).ready(function() {
    	})
 
    	function play () {
-   		autoPlayIndex++;
-   		var num = $('.thumbnail-image').length; 
-   		autoPlayIndex = autoPlayIndex%($('.thumbnail-image').length); 
+   		autoPlayIndex = ++autoPlayIndex%($('.thumbnail-image').length); 
    		$('.thumbnail-image').eq(autoPlayIndex).trigger('click', [true]);
    	}
-
-
 });
