@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var lastIndex = 0; 
 	var autoPlayIndex = 0; 
 	var autoPlayFlag = false;
-	$('.thumbnail-image').click(function(e, autoScroll){
+	$('.thumbnail-image').click(function(e, invokedByAutoPlay){
 		$('.active-thumbnail').removeClass('active-thumbnail');
 		$(this).addClass('active-thumbnail'); 
 
@@ -13,6 +13,12 @@ $(document).ready(function() {
 		$("#main-display").stop().animate({marginLeft:'-'+index*900+'px'}, speed);
 		lastIndex = index; 
     autoPlayIndex = index;
+
+     // Reset the auto play timer 
+    if ((!invokedByAutoPlay) && (autoPlayFlag)) {
+          clearInterval(autoPlay); 
+          autoPlay = setInterval(play, duration);       
+    }
 	});
 
      var autoPlay = null;
